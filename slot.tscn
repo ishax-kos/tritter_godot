@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgvq551kd767d"]
+
+[ext_resource type="Script" path="res://gates/slot_output.gd" id="1_xpsuh"]
+
+[node name="Slot" type="Button"]
+self_modulate = Color(8, 8, 8, 1)
+custom_minimum_size = Vector2(16, 16)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(8, 8)
+script = ExtResource("1_xpsuh")

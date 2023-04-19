@@ -1,0 +1,88 @@
+[gd_scene load_steps=6 format=3 uid="uid://bofyai6ksth6l"]
+
+[ext_resource type="Script" path="res://base.gd" id="1_160ar"]
+[ext_resource type="Script" path="res://draw_drag_spline.gd" id="3_78rrk"]
+[ext_resource type="Script" path="res://operator_menu.gd" id="3_fsxsn"]
+[ext_resource type="Script" path="res://panel_right.gd" id="3_r5vhf"]
+[ext_resource type="Script" path="res://gates/slot_input.gd" id="5_hdcrj"]
+
+[node name="Base" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.439216, 0.486275, 0.486275, 1)
+script = ExtResource("1_160ar")
+
+[node name="LineDraw" type="Node2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("3_78rrk")
+metadata/_edit_lock_ = true
+
+[node name="PopupMenu" type="PopupMenu" parent="."]
+
+[node name="PanelLeft" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 32.0
+grow_vertical = 2
+
+[node name="BoxContainer" type="BoxContainer" parent="PanelLeft"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_right = 8.0
+grow_horizontal = 0
+grow_vertical = 2
+alignment = 1
+vertical = true
+
+[node name="FlowContainer" type="FlowContainer" parent="PanelLeft"]
+visible = false
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 40.0
+grow_vertical = 2
+vertical = true
+
+[node name="GateMenu" type="Tree" parent="PanelLeft"]
+layout_mode = 2
+offset_left = 56.0
+offset_top = 32.0
+offset_right = 272.0
+offset_bottom = 256.0
+hide_root = true
+script = ExtResource("3_fsxsn")
+
+[node name="PanelRight" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -32.0
+grow_horizontal = 0
+grow_vertical = 2
+script = ExtResource("3_r5vhf")
+
+[node name="BoxContainer" type="BoxContainer" parent="PanelRight"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_right = 8.0
+grow_vertical = 2
+alignment = 1
+vertical = true
+
+[node name="Slot_in" type="Button" parent="PanelRight/BoxContainer"]
+layout_mode = 2
+script = ExtResource("5_hdcrj")
+
+[connection signal="button_clicked" from="PanelLeft/GateMenu" to="PanelLeft/GateMenu" method="_on_button_clicked"]

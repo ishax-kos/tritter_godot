@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://dxja65pkmh1o5"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MenuBar" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MenuButton" type="MenuButton" parent="MenuBar"]
+layout_mode = 2
+text = "Menu 1"
+item_count = 2
+popup/item_0/text = "Foo"
+popup/item_0/id = 0
+popup/item_1/text = "Bar"
+popup/item_1/id = 1
+
+[node name="MenuButton2" type="MenuButton" parent="MenuBar"]
+layout_mode = 2
+text = "Menu 2"
+item_count = 3
+popup/item_0/text = "A"
+popup/item_0/id = 0
+popup/item_1/text = "B"
+popup/item_1/id = 1
+popup/item_1/separator = true
+popup/item_2/text = "C"
+popup/item_2/id = 2
+
+[node name="OptionButton" type="OptionButton" parent="MenuBar"]
+layout_mode = 2

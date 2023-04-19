@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://ddlp0gybm860t"]
+
+[ext_resource type="PackedScene" uid="uid://c6gyiwtxm02tl" path="res://gates/gate.tscn" id="1_q0y1r"]
+[ext_resource type="Script" path="res://gates/constant.gd" id="2_8fiea"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tl8e0"]
+content_margin_top = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0.0313726, 0.603922, 0.784314, 1)
+border_blend = true
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lb8kd"]
+content_margin_left = 2.0
+content_margin_right = 2.0
+bg_color = Color(0.878431, 0.466667, 0, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[node name="Constant" instance=ExtResource("1_q0y1r")]
+offset_right = 48.0
+script = ExtResource("2_8fiea")
+input_count = 0
+
+[node name="Input" parent="." index="0"]
+visible = false
+
+[node name="VSlider" type="HSlider" parent="." index="2"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -8.0
+offset_right = 40.0
+offset_bottom = 8.0
+grow_vertical = 2
+theme_override_styles/slider = SubResource("StyleBoxFlat_tl8e0")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_lb8kd")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_lb8kd")
+min_value = -1.0
+max_value = 1.0
+rounded = true
+ticks_on_borders = true
+
+[connection signal="value_changed" from="VSlider" to="." method="_on_v_slider_value_changed"]

@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://di0d5c83q7csv"]
+
+[ext_resource type="PackedScene" uid="uid://c6gyiwtxm02tl" path="res://gates/gate.tscn" id="1_oqtpm"]
+[ext_resource type="Script" path="res://gates/max.gd" id="2_ih2qc"]
+
+[node name="Max" instance=ExtResource("1_oqtpm")]
+script = ExtResource("2_ih2qc")
+input_count = 2
